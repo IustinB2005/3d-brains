@@ -89,3 +89,11 @@ begin
          using (user_id = auth.uid()) with check (user_id = auth.uid())', t);
   end loop;
 end $$;
+
+-- Table privileges for signed-in users. Newer Supabase projects don't grant
+-- these automatically for tables created in the SQL editor. RLS above still
+-- limits every user to their own rows. The anonymous role gets nothing.
+grant usage on schema public to authenticated;
+grant select, insert, update, delete
+  on public.settings, public.printers, public.filaments, public.orders
+  to authenticated;
