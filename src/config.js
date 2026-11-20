@@ -7,5 +7,5 @@
 // accounts and cloud storage. The anon key is safe to expose:
 // every table is protected by Row Level Security.
 // ─────────────────────────────────────────────────────────────
-export const SUPABASE_URL = '';
-export const SUPABASE_ANON_KEY = '';
+export const SUPABASE_URL = 'https://vchzjscbyscpyqdpnzif.supabase.co';
+export const SUPABASE_ANON_KEY = 'sb_publishable_xZr6xVMIoCxrrKLe5vPqgw_bu5uno0O';
