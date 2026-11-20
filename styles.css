@@ -506,5 +506,6 @@ input[type='checkbox'] { width: 17px; height: 17px; accent-color: var(--btn); }
   .mock-p { display: none; }
   .lnav-cta .btn-ghost { display: none; }
   .mat { grid-template-columns: 22px 1fr 92px 32px; }
+  .toasts { bottom: calc(84px + env(safe-area-inset-bottom)); }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
