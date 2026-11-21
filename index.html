@@ -3,22 +3,119 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>3D Brains · Run your 3D printing business</title>
-  <meta name="description" content="Order tracking, real cost per print and profit for makers who sell 3D prints. Import from Printables and MakerWorld, drop a sliced file, done." />
+  <script>
+    // Logged-in pages: hide the pre-rendered landing page until the app boots.
+    if (/^#\/(app|login|signup|reset)/.test(location.hash) || location.hash.includes('access_token')) document.documentElement.classList.add('in-app');
+  </script>
+  <title>3D Brains · Order, cost &amp; profit tracker for 3D print shops</title>
+  <meta name="description" content="3D Brains helps makers who sell 3D prints track orders from quote to delivery, calculate the real cost of every print and see their profit. Free. Works with Printables, MakerWorld, Bambu Studio, OrcaSlicer and PrusaSlicer." />
+  <link rel="canonical" href="https://3dbrains.ro/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="application-name" content="3D Brains" />
+  <meta name="apple-mobile-web-app-title" content="3D Brains" />
   <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
-  <meta property="og:title" content="3D Brains" />
-  <meta property="og:description" content="The calm way to run your 3D printing business." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="3D Brains" />
+  <meta property="og:title" content="3D Brains · Run your 3D printing business" />
+  <meta property="og:description" content="Track orders, know the real cost of every print and see what you actually earn. Free for makers." />
   <meta property="og:url" content="https://3dbrains.ro/" />
+  <meta property="og:image" content="https://3dbrains.ro/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="3D Brains dashboard with orders, revenue and profit" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="3D Brains · Run your 3D printing business" />
+  <meta name="twitter:description" content="Track orders, know the real cost of every print and see what you actually earn." />
+  <meta name="twitter:image" content="https://3dbrains.ro/assets/og-image.png" />
+
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://3dbrains.ro/#website",
+        "name": "3D Brains",
+        "alternateName": ["3DBrains", "3D Brains app"],
+        "url": "https://3dbrains.ro/"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://3dbrains.ro/#org",
+        "name": "3D Brains",
+        "url": "https://3dbrains.ro/",
+        "logo": "https://3dbrains.ro/assets/icon-512.png"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "3D Brains",
+        "url": "https://3dbrains.ro/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Order tracking, real cost per print and profit dashboard for makers who sell 3D prints. Imports from Printables, MakerWorld and sliced .gcode.3mf / .gcode files.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "publisher": { "@id": "https://3dbrains.ro/#org" }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="app"><div class="boot"><div class="spinner"></div></div></div>
-  <noscript>3D Brains needs JavaScript to run.</noscript>
+  <div id="app"><!--prerender:start--><div class="landing"><nav class="lnav"><a class="brand" href="#/"><img src="assets/logo.svg" width="28" height="28" alt="" class="logo-img"><span>3D Brains</span></a><div class="lnav-links"><a href="#">Features</a><a href="#">How it works</a><a href="#">Pricing</a></div><div class="lnav-cta"><a class="btn btn-ghost" href="#/login">Sign in</a><a class="btn btn-primary" href="#/signup">Start free</a></div></nav><header class="hero"><div class="hero-copy"><span class="eyebrow">For makers who sell their prints</span><h1>The calm way to run your <em>3D&nbsp;printing</em> business.</h1><p class="lead">Track every order from quote to delivery, know the real cost of each print, and see what you actually earn. Import models from Printables and MakerWorld, or drop in a sliced file and let 3D Brains fill in the rest.</p><div class="hero-cta"><a class="btn btn-primary btn-lg" href="#/signup">Start free<span><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a></div><p class="fine">Free. No credit card. Your data stays yours.</p></div><div class="mock" aria-hidden="true">
+    <div class="mock-bar"><span></span><span></span><span></span></div>
+    <div class="mock-kpis">
+      <div><span>Revenue · 30d</span><b>4,820 lei</b></div>
+      <div><span>Profit</span><b>2,915 lei</b></div>
+      <div><span>On the printer</span><b>96h</b></div>
+    </div>
+    <div class="mock-list">
+      
+    <div class="mock-row">
+      <span class="mock-sw" style="background:#2b2b2b"></span>
+      <div class="mock-t"><b>Articulated dragon</b><span>MakerWorld · 95 g · 5h 40m</span></div>
+      <span class="pill pill-printing">Printing</span>
+      <b class="mock-p">149 lei</b>
+    </div>
+      
+    <div class="mock-row">
+      <span class="mock-sw" style="background:#9caf88"></span>
+      <div class="mock-t"><b>Planter with drainage</b><span>Printables · 160 g · 5h</span></div>
+      <span class="pill pill-queued">Queued</span>
+      <b class="mock-p">95 lei</b>
+    </div>
+      
+    <div class="mock-row">
+      <span class="mock-sw" style="background:#f1ede4"></span>
+      <div class="mock-t"><b>Name keychains ×20</b><span>Custom · 40 g · 3h</span></div>
+      <span class="pill pill-done">Done</span>
+      <b class="mock-p">120 lei</b>
+    </div>
+      
+    <div class="mock-row">
+      <span class="mock-sw" style="background:#f07a2b"></span>
+      <div class="mock-t"><b>Lamp shade</b><span>Printables · 190 g · 6h 20m</span></div>
+      <span class="pill pill-quote">Quote</span>
+      <b class="mock-p">160 lei</b>
+    </div>
+    </div></div></header><section class="works-with"><span>Works with</span><b>Printables</b><b>MakerWorld</b><b>Bambu Studio</b><b>OrcaSlicer</b><b>PrusaSlicer</b></section><section id="features" class="section"><div class="section-head"><h2>Everything a print shop needs. Nothing it doesn’t.</h2><p class="lead">Built by a maker with a Bambu Lab X2D and a growing list of orders, for anyone who has outgrown the spreadsheet.</p></div><div class="features"><article class="feature"><span class="feature-ico"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span><h3>Orders, structured</h3><p>Every job moves through Quote → Queued → Printing → Done → Delivered. See what is due, what is unpaid and what is next at a glance.</p></article><article class="feature"><span class="feature-ico"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"></path></svg></span><h3>True cost per print</h3><p>Filament by the gram, electricity by the kWh, machine wear by the hour, labour and a failure buffer. Get a suggested price before you quote.</p></article><article class="feature"><span class="feature-ico"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"></path></svg></span><h3>Printables &amp; MakerWorld</h3><p>Paste a model link and 3D Brains fills in the title, preview and source, so you always know where a design came from.</p></article><article class="feature"><span class="feature-ico"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"></path><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg></span><h3>Drop a sliced file</h3><p>Drag in a .gcode.3mf from Bambu Studio or OrcaSlicer, or a PrusaSlicer .gcode. Print time, grams and colours fill in automatically.</p></article><article class="feature"><span class="feature-ico"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 3v6M12 15v6"></path></svg></span><h3>Filament that tracks itself</h3><p>Spools are deducted when an order is done. Low-stock spools surface on your dashboard before you run out mid-print.</p></article><article class="feature"><span class="feature-ico"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg></span><h3>Know what you earn</h3><p>Revenue, real profit, margin, hours on the printer and kilograms used, by month. Export everything to CSV whenever you need it.</p></article></div></section><section class="section"><div class="section-head"><h2>What does that print really cost?</h2><p class="lead">Most makers only count filament. Try it.</p></div><div class="calc card"><div class="calc-in"><label class="field"><span class="field-label">Filament used (g)</span><input type="number" min="0" inputmode="decimal"></label><label class="field"><span class="field-label">Print time (h)</span><input type="number" min="0" step="0.5" inputmode="decimal"></label><label class="field"><span class="field-label">Spool price (lei / kg)</span><input type="number" min="0" inputmode="decimal"></label><p class="field-hint">Assumes a 350 W printer, 1.30 lei/kWh, a 5% failure buffer and 100% markup. All of it is configurable inside.</p></div><div class="calc-out">
+      <div class="calc-row"><span>Filament</span><b>13.80 lei</b></div>
+      <div class="calc-row"><span>Electricity</span><b>1.82 lei</b></div>
+      <div class="calc-row"><span>Machine wear</span><b>7.60 lei</b></div>
+      <div class="calc-row calc-total"><span>Real cost</span><b>24.38 lei</b></div>
+      <div class="calc-row calc-suggest"><span>Suggested price</span><b>49 lei</b></div></div></div></section><section id="how" class="section"><div class="section-head"><h2>Up and running in three minutes</h2></div><ol class="steps"><li class="step"><span class="step-n">1</span><h3>Add your printer and spools</h3><p>Pick your printer from the presets and add the filament you have on the shelf with its price per kilo.</p></li><li class="step"><span class="step-n">2</span><h3>Log an order</h3><p>Paste a Printables or MakerWorld link or drop a sliced file. Costs and a suggested price appear instantly.</p></li><li class="step"><span class="step-n">3</span><h3>Move it along</h3><p>Advance the status as you print and deliver. Stock, revenue and profit update on their own.</p></li></ol></section><section id="pricing" class="section"><div class="pricing card"><div><span class="eyebrow">Pricing</span><h2>Free for makers.</h2><p class="lead">Unlimited orders, printers and spools. Create an account and organise your print business in minutes.</p></div><ul class="checks"><li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>Unlimited orders &amp; printers</li><li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>Cost and price calculator</li><li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>Printables &amp; MakerWorld import</li><li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>Slicer file auto-fill</li><li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>CSV &amp; JSON export</li></ul><a class="btn btn-primary btn-lg" href="#/signup">Start free</a></div></section><footer class="lfoot"><a class="brand" href="#/"><img src="assets/logo.svg" width="22" height="22" alt="" class="logo-img"><span>3D Brains</span></a><span class="muted">© 2026 3dbrains.ro · Made for makers</span></footer></div><!--prerender:end--></div>
+  <noscript>3D Brains needs JavaScript to run the app.</noscript>
   <script type="module" src="src/main.js"></script>
 </body>
 </html>

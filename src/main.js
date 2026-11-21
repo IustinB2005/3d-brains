@@ -33,6 +33,7 @@ async function route() {
     renderLanding(root, state.user);
     if (path.startsWith('/#')) document.getElementById(path.slice(2))?.scrollIntoView();
   }
+  document.documentElement.classList.remove('in-app');
   if (path !== lastPath) window.scrollTo(0, 0);
   lastPath = path;
 }

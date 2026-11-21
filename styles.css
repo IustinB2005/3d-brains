@@ -509,3 +509,6 @@ input[type='checkbox'] { width: 17px; height: 17px; accent-color: var(--btn); }
   .toasts { bottom: calc(84px + env(safe-area-inset-bottom)); }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* Pre-rendered landing is hidden on app routes until JS takes over */
+.in-app #app > .landing { display: none; }

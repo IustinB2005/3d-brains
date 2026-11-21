@@ -109,3 +109,14 @@ vendor/                 supabase-js 2.45.4, fflate 0.8.2
 - Upload de poze în Supabase Storage.
 - Facturi PDF.
 - Integrare cu imprimantele Bambu (status live prin MQTT pe rețeaua locală).
+
+## SEO
+
+- `index.html` conține titlul, descrierea, `canonical`, datele Open Graph / Twitter și date structurate JSON-LD (`WebSite`, `Organization`, `SoftwareApplication`). Datele structurate îi spun lui Google că „3D Brains” este numele site-ului.
+- Pagina de prezentare e pre-generată direct în `index.html`, așa că motoarele de căutare văd textul complet fără să ruleze JavaScript.
+- `robots.txt`, `sitemap.xml`, `site.webmanifest`, iconițele și `assets/og-image.png` (imaginea care apare când cineva distribuie linkul).
+- După ce modifici pagina de prezentare, regenerezi aceste fișiere cu:
+  ```bash
+  python3 -m http.server 8080 &
+  node scripts/prerender.cjs
+  ```
